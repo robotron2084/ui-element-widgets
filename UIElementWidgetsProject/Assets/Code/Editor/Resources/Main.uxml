@@ -1,11 +1,15 @@
-﻿<UXML xmlns="UnityEngine.UIElements">
-    <!-- Creates our template and gives it a name for future reference. -->
-    <VisualElement>
-        
-    <Label text="Elements Test" />
-    <!-- Creates a parent VisualElement in which we will add our template. -->
-    <VisualElement name="tabs-container" />
-    <VisualElement name="pages-container" />
-    </VisualElement>
-
-</UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Template name="TabTemplate" src="TabTemplate.uxml" />
+    <ui:VisualElement style="height: 100%;">
+        <Style src="Styles.uss" />
+        <ui:Label text="Elements Test" />
+        <ui:VisualElement name="tabs-container" class="tabs-container">
+        </ui:VisualElement>
+        <ui:VisualElement name="pages-container" class="pages-container">
+            <ui:VisualElement class="tab-page" style="background-color: rgb(255, 71, 71);">
+                <ui:Label text="Label" />
+            </ui:VisualElement>
+            <ui:VisualElement />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

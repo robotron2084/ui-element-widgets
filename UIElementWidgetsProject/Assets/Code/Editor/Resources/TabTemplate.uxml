@@ -1,3 +1,9 @@
-﻿<UXML xmlns="UnityEngine.UIElements">
-    <Button text="TabButton"></Button>
-</UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="TabRoot" class="tab-active">
+        <Style src="Styles.uss" />
+        <ui:Button name="TabButton" focusable="true" class="tab-button">
+            <ui:Label text="TabButtonWithLongName" name="tab-label" tooltip="TabButtonWithLongName" class="tab-label" />
+            <ui:Button name="CloseButton" class="tab-close-button" />
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

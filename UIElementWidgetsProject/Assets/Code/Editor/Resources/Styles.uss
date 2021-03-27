@@ -1,4 +1,93 @@
-﻿.tabs-container
-{
+.tabs-container {
     display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+}
+
+.tab-page {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pages-container {
+    position: relative;
+    height: 100%;
+}
+
+.tab-active {
+    flex-direction: row;
+    min-width: 100px;
+}
+
+.tab-inactive {
+    flex-direction: row;
+    min-width: 10px;
+    flex-shrink: 1;
+}
+
+.tab-inactive Button#TabButton {
+    background-color: rgb(64,64,64);
+}
+
+.tab-active Button#TabButton {
+    
+}
+
+.tab-button {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    width: auto;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.tab-label {
+    overflow: hidden;
+    margin-right: 5px;
+    -unity-text-align: middle-left;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.tab-close-button {
+    flex-shrink: 1;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 15px;
+    height: 15px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-left-color: rgb(47, 47, 47);
+    border-right-color: rgb(47, 47, 47);
+    border-top-color: rgb(47, 47, 47);
+    border-bottom-color: rgb(47, 47, 47);
+    background-color: rgb(255, 0, 0);
+    min-width: 15px;
+    min-height: 15px;
+}
+
+.tab-close-button:hover
+{
+    background-color: rgb(0, 255, 0);
 }
