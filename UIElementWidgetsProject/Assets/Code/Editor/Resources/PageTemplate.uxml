@@ -1,0 +1,5 @@
+﻿<UXML xmlns="UnityEngine.UIElements">
+    <VisualElement>
+        <Label text="Page"></Label>
+    </VisualElement>
+</UXML>

@@ -1,0 +1,4 @@
+﻿.tabs-container
+{
+    display: flex;
+}
