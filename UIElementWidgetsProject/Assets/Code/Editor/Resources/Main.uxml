@@ -6,10 +6,6 @@
         <ui:VisualElement name="tabs-container" class="tabs-container">
         </ui:VisualElement>
         <ui:VisualElement name="pages-container" class="pages-container">
-            <ui:VisualElement class="tab-page" style="background-color: rgb(255, 71, 71);">
-                <ui:Label text="Label" />
-            </ui:VisualElement>
-            <ui:VisualElement />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

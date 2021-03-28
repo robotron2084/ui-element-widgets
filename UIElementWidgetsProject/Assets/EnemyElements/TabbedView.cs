@@ -7,8 +7,20 @@ namespace EnemyElements.UI
     private static string TabActiveStyle = "tab-active";
     private static string TabInactiveStyle = "tab-inactive";
     
+    private static string PageActiveStyle = "page-active";
+    private static string PageInactiveStyle = "page-inactive";
+
     private VisualElement _tabView;
+    public VisualElement TabView
+    {
+      get { return _tabView; }
+    }
     private VisualElement _pageView;
+
+    public VisualElement PageView
+    {
+      get { return _pageView; }
+    }
 
     public TabbedView(VisualElement tabView, VisualElement pageView)
     {
@@ -18,12 +30,23 @@ namespace EnemyElements.UI
 
     public void OnSelected(bool enable)
     {
-      string styleToAdd = enable ? TabActiveStyle : TabInactiveStyle;
-      string styleToRemove = enable ? TabInactiveStyle : TabActiveStyle;
-      _tabView.AddToClassList(styleToAdd);
-      _tabView.RemoveFromClassList(styleToRemove);
-      //_pageView.AddToClassList(styleToAdd);
-      //_pageView.RemoveFromClassList(styleToRemove);
+      toggleClasses(_tabView, enable, TabActiveStyle, TabInactiveStyle);
+      toggleClasses(_pageView, enable, PageActiveStyle, PageInactiveStyle);
+    }
+
+    public void DetachFromParent()
+    {
+      _tabView.RemoveFromHierarchy();
+      _pageView.RemoveFromHierarchy();
+    }
+
+    void toggleClasses(VisualElement view,bool isActive, string activeStyle, string inactiveStyle)
+    {
+      string styleToAdd = isActive ? activeStyle : inactiveStyle;
+      string styleToRemove = isActive ? inactiveStyle : activeStyle;
+      view.AddToClassList(styleToAdd);
+      view.RemoveFromClassList(styleToRemove);
+
     }
     
     

@@ -11,6 +11,16 @@
     height: 100%;
 }
 
+.page-active
+{
+    background-color: aqua;
+}
+
+.page-inactive
+{
+    display: none;
+}
+
 .pages-container {
     position: relative;
     height: 100%;

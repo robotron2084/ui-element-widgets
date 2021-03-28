@@ -11,7 +11,7 @@ namespace EnemyElements.UI
     private List<TabbedView> _tabbedViews = new List<TabbedView>();
     private TabbedView _currentView;
 
-    public void TabbedView(VisualElement tabsContainer, VisualElement pagesContainer)
+    public TabbedViewController(VisualElement tabsContainer, VisualElement pagesContainer)
     {
       _tabsContainer = tabsContainer;
       _pagesContainer = pagesContainer;
@@ -20,6 +20,8 @@ namespace EnemyElements.UI
     public void AddView(TabbedView tabbedView)
     {
       _tabbedViews.Add(tabbedView);
+      _tabsContainer.Add(tabbedView.TabView);
+      _pagesContainer.Add(tabbedView.PageView);
       if (_currentView == null)
       {
         _currentView = tabbedView;
@@ -27,6 +29,10 @@ namespace EnemyElements.UI
       tabbedView.OnSelected(_currentView == tabbedView);
     }
 
+    /// <summary>
+    /// Selects a view. Views can be unselected by choosing 'null'.
+    /// </summary>
+    /// <param name="tabbedView"></param>
     public void SelectView(TabbedView tabbedView)
     {
       if (tabbedView == _currentView)
@@ -39,7 +45,41 @@ namespace EnemyElements.UI
       }
 
       _currentView = tabbedView;
-      _currentView.OnSelected(true);
+      if (_currentView != null)
+      {
+        _currentView.OnSelected(true);
+      }
+      
+    }
+
+    public void RemoveView(TabbedView tabbedView)
+    {
+      if (tabbedView == null)
+      {
+        return;
+      }
+      if (_currentView == tabbedView)
+      {
+        //get the next view...
+        if (_tabbedViews.Count > 1)
+        {
+          // we have other views...select one of them.
+          foreach (var view in _tabbedViews)
+          {
+            if (view != tabbedView)
+            {
+              SelectView(view);
+              return;
+            }
+          }
+        }
+        else
+        {
+          SelectView(null);
+        }
+      }
+      _tabbedViews.Remove(tabbedView);
+      tabbedView.DetachFromParent();
       
     }
   }
