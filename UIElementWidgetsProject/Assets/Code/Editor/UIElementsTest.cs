@@ -23,7 +23,6 @@ namespace DefaultNamespace
     void initView()
     {
       var root = rootVisualElement;
-      root.styleSheets.Add(Resources.Load<StyleSheet>("Styles"));
       var visualTree = Resources.Load<VisualTreeAsset>("Main");
       visualTree.CloneTree(root);
       PageController controller = new PageController(root);
@@ -31,7 +30,6 @@ namespace DefaultNamespace
       for (int i = 0; i < 3; i++)
       {
         new PageViewModel(controller);
-
       }
       
     }

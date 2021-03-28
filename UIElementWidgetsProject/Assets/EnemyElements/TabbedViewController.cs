@@ -69,7 +69,7 @@ namespace EnemyElements.UI
             if (view != tabbedView)
             {
               SelectView(view);
-              return;
+              break;
             }
           }
         }
