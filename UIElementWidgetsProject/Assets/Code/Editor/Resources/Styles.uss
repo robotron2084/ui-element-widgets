@@ -11,13 +11,11 @@
     height: 100%;
 }
 
-.page-active
-{
+.page-active {
     background-color: aqua;
 }
 
-.page-inactive
-{
+.page-inactive {
     display: none;
 }
 
@@ -38,11 +36,30 @@
 }
 
 .tab-inactive Button#TabButton {
-    background-color: rgb(64,64,64);
+    background-color: rgb(64, 64, 64);
+}
+
+.tab-inactive Button#TabButton:hover {
+    background-color: rgb(93, 93, 93);
+}
+
+.tab-active Button#CloseButton {
+    background-color: rgb(93, 93, 93);
+}
+
+.tab-active Button#CloseButton:hover {
+    background-color: rgb(123, 123, 123);
+}
+
+.tab-inactive Button#CloseButton {
+    background-color: rgb(64, 64, 64);
+}
+
+.tab-inactive Button#CloseButton:hover {
+    background-color: rgb(113, 113, 113);
 }
 
 .tab-active Button#TabButton {
-    
 }
 
 .tab-button {
@@ -50,7 +67,7 @@
     border-bottom-right-radius: 0;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    height: 20px;
+    height: 22px;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
@@ -82,22 +99,19 @@
     border-bottom-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
     border-bottom-width: 0;
-    border-left-color: rgb(47, 47, 47);
-    border-right-color: rgb(47, 47, 47);
-    border-top-color: rgb(47, 47, 47);
-    border-bottom-color: rgb(47, 47, 47);
-    background-color: rgb(255, 0, 0);
-    min-width: 15px;
-    min-height: 15px;
+    top: 1px;
+    right: 2px;
 }
 
-.tab-close-button:hover
-{
-    background-color: rgb(0, 255, 0);
+.tab-close-icon {
+    background-image: resource('close_icon');
+    width: 16px;
+    height: 16px;
+    position: absolute;
 }

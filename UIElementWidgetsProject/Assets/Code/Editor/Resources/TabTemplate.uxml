@@ -3,7 +3,9 @@
         <Style src="Styles.uss" />
         <ui:Button name="TabButton" focusable="true" class="tab-button">
             <ui:Label text="TabButtonWithLongName" name="tab-label" tooltip="TabButtonWithLongName" class="tab-label" />
-            <ui:Button name="CloseButton" class="tab-close-button" />
+            <ui:Button name="CloseButton" class="tab-close-button" style="padding-left: 0; padding-right: 2px; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 1px; margin-bottom: 0; align-items: center; justify-content: center; overflow: visible;">
+                <ui:VisualElement name="CloseIcon" class="tab-close-icon" />
+            </ui:Button>
         </ui:Button>
     </ui:VisualElement>
 </ui:UXML>
