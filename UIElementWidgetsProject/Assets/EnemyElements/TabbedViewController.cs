@@ -1,15 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace EnemyElements.UI
 {
   public class TabbedViewController
   {
+    public delegate void OnViewChangedEvent(TabbedViewController tabbedViewController);
+
+    public OnViewChangedEvent OnViewChanged;
+    
     private VisualElement _tabsContainer;
     private VisualElement _pagesContainer;
     
     private List<TabbedView> _tabbedViews = new List<TabbedView>();
     private TabbedView _currentView;
+
+    public TabbedView CurrentView => _currentView;
+
+    public int CurrentViewIndex
+    {
+      get
+      {
+        if (_currentView == null)
+        {
+          return 0;
+        }
+        return _tabbedViews.IndexOf(_currentView);
+      }
+    }
 
     public TabbedViewController(VisualElement tabsContainer, VisualElement pagesContainer)
     {
@@ -49,7 +69,15 @@ namespace EnemyElements.UI
       {
         _currentView.OnSelected(true);
       }
+      OnViewChanged?.Invoke(this);
       
+    }
+
+    public void SelectView(int index)
+    {
+      Mathf.Clamp(index, 0, _tabbedViews.Count - 1);
+      TabbedView tabbedView = _tabbedViews[index];
+      SelectView(tabbedView);
     }
 
     public void RemoveView(TabbedView tabbedView)
